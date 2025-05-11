@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  stock-alert:
+    build: .
+    ports:
+      - "9000:8080"
+    environment:
+      STOCKS: "SPY,QQQ,VOO,VTI,IWM,EEM,XLF,XLK,XLE,XLY,AAPL,MSFT,AMZN,NVDA,GOOGL,TSLA,META,JPM,UNH,JNJ"
+      TO_EMAIL: "swag200@icloud.com"
+      FROM_EMAIL: "swag200@icloud.com"
+#      AWS_ACCESS_KEY_ID: "<your-aws-access-key>"
+#      AWS_SECRET_ACCESS_KEY: "<your-aws-secret-key>"
+      AWS_DEFAULT_REGION: "us-east-2"
