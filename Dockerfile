@@ -8,5 +8,6 @@ RUN pip install -r requirements.txt
 COPY lambda_function.py ./
 RUN chmod 644 lambda_function.py
 
-# (no USER directive needed—defaults will apply)
+
+# (no USER directive needed—defaults will apply) test
 CMD ["lambda_function.lambda_handler"]

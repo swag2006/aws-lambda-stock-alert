@@ -3,8 +3,14 @@ import ta
 import os
 from ta.trend import EMAIndicator, MACD
 
-def fetch_stock_data(ticker, period='7d', interval='1h'):
-    return yf.download(ticker, period=period, interval=interval)
+# Read period & interval from env (with sensible defaults)
+PERIOD   = os.environ.get('DATA_PERIOD',   '7d')
+INTERVAL = os.environ.get('DATA_INTERVAL', '1h')
+
+def fetch_stock_data(ticker):
+    # no more hard‑coded args
+    return yf.download(ticker, period=PERIOD, interval=INTERVAL)
+
 
 def calculate_indicators(data):
     close = data['Close'].squeeze()    # ensure a Series

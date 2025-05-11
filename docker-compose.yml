@@ -7,6 +7,8 @@ services:
       - "9000:8080"
     environment:
       STOCKS: "SPY,QQQ,VOO,VTI,IWM,EEM,XLF,XLK,XLE,XLY,AAPL,MSFT,AMZN,NVDA,GOOGL,TSLA,META,JPM,UNH,JNJ"
+      DATA_PERIOD: "365d"     # e.g. 7d, 30d, 60d, 365d
+      DATA_INTERVAL: "1d"     # e.g. 5m, 15m, 1h, 1d
       TO_EMAIL: "swag200@icloud.com"
       FROM_EMAIL: "swag200@icloud.com"
 #      AWS_ACCESS_KEY_ID: "<your-aws-access-key>"
