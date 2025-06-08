@@ -24,7 +24,7 @@ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d
 
 ### 3. Push Docker Image to AWS ECR:
 ```
-aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 434485552471.dkr.ecr.us-east-2.amazonaws.com/trade
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin xxxxxxx.dkr.ecr.us-east-2.amazonaws.com/trade
 #aws ecr create-repository --repository-name stock-alert-image
 docker tag stock-alert-lambda:latest xxxxx.dkr.ecr.us-east-2.amazonaws.com/trade/alert:v1
 docker push xxxx.dkr.ecr.us-east-2.amazonaws.com/trade/alert:v1
